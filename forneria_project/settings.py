@@ -44,7 +44,7 @@ ROOT_URLCONF = 'forneria_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # carpeta global de templates
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -58,16 +58,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'forneria_project.wsgi.application'
 
-# --- Base de datos MySQL (esquema 'forneria') ---
+# --- Base de datos MySQL ---
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'forneria',
-        'USER': 'forneria_user',     # creado en paso 6.2
-        'PASSWORD': 'TU_PASSWORD',   # <-- cambia por tu clave de MySQL en 6.2
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
+        'NAME': 'forneria',             # Nombre de la base de datos en MySQL
+        'USER': 'root',                 # Usar 'root' si no has creado un usuario específico
+        'PASSWORD': '',                 # Deja vacío si no tienes contraseña en MySQL
+        'HOST': '127.0.0.1',           # Dirección del servidor (localhost)
+        'PORT': '3306',                 # Puerto por defecto de MySQL
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
@@ -93,4 +95,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
-
