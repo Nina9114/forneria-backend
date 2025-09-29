@@ -1,15 +1,8 @@
-
 env/
-
 __pycache__/
 *.pyc
-[200~*.pyo
 *.pyo
 *.log
-
 db.sqlite3
-
 *.sqlite3
-
 media/
-
